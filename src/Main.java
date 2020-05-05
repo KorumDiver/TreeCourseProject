@@ -13,9 +13,6 @@ class Main {
         for (int i : mas) {
             avl.push(i, ""+i);
         }
-
-        avl.
-
         System.out.println(avl.pop(100));
 
 
