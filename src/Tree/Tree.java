@@ -3,7 +3,7 @@ package Tree;
 public interface Tree<T> {
 
     //Добавление элемента в дерево, id - ключ, T - любой класс(реализуется с помощью джинериков)
-    boolean push(int id, T data);
+    void push(int id, T data);
 
     //Вытаскивание элемента из дерева (при этом нода удаляется из дерева)
     T pop(int id);

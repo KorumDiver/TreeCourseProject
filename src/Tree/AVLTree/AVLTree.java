@@ -6,7 +6,7 @@ public class AVLTree<T> implements Tree<T> {
     private Node<T> first;
 
     @Override
-    public boolean push(int id, T data) {
+    public void push(int id, T data) {
         Node newNode = new Node(id, data);//Создаем элемент добавления(тот который будет вставлен в дерево)
         if (first == null) {//Проверка на первый элемент(Есть ли корень у дерева)
             this.first = newNode;
@@ -14,7 +14,7 @@ public class AVLTree<T> implements Tree<T> {
             newNode.setParent(this.first);//Создаем указатель на родителя
             while (true) {//"Бесконечный" цикл прохождения по дереву
                 if (newNode.getID() == newNode.getParent().getID()) {//Если элемент уже существует, то возвращаем False
-                    return false;
+                    return;
                 }
                 if (newNode.getID() < newNode.getParent().getID()) {//Сравнение элемента в вставляемом объекте и его родителя
                     if (newNode.getParent().getLeft() == null) {//Если элемент меньше родительского, то проверяем существование левого потомка
@@ -35,8 +35,6 @@ public class AVLTree<T> implements Tree<T> {
         }
 
         ballans(newNode.getParent());
-
-        return true;
     }
 
     @Override
