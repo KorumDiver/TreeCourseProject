@@ -6,8 +6,8 @@ import Tree.Tree;
 public class Treap<T> implements Tree<T> {
 
     static private Random rand = new Random();
-    public int id;
-    public int y;
+    private int id;
+    private int y;
     public Treap Left;
     public Treap Right;
     private T data;
